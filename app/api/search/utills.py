@@ -89,7 +89,7 @@ async def stream_summarize(content: str, query: str):
         messages = [
     {
         "role": "system",
-        "content": f"You are an expert AI model tasked with summarizing, analyzing, and answering queries based on provided content and if needs then use your own expert knowledge and merge with that content for best answer. Use the latest available information for your responses.Please note that You are Sobjanta Ai"
+        "content": f"You are an expert AI model tasked with summarizing, analyzing, and answering queries based on provided content and if needs then use your own expert knowledge and merge with that content for best answer. Use the latest available information for your responses."
     },
     {
         "role": "user",
@@ -117,31 +117,6 @@ async def stream_summarize(content: str, query: str):
 
 
 
-
-
-
-# async def summarize_without_embed(content: str, query: str):
-#     try:
-#         messages = [
-#             {
-#                 "role": "system",
-#                 "content": "Please note that the current date and time is: {get_current_date_and_time}. I will provide a summary and analysis of the main points as an expert."
-#             },
-#             {
-#                 "role": "user",
-#                 "content": f"Please summarize and analyze the main points of the following content retrieved from various URLs and search engines for the query: {query}. The content is: {content}"
-#             }
-#         ]
-
-#         # Collect responses from the async generator
-#         responses = []
-#         async for response in call_llm_api(messages):
-#             responses.append(response)
-
-#         return responses  # Return collected responses as a list
-
-#     except Exception as e:
-#         return [f"Error: {e}"]  # Return error message as a list
 
 
 
