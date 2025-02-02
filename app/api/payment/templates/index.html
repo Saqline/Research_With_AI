@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buy Stuff!</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        const stripe = Stripe('{{ publishable_key }}');
+
+        async function checkout() {
+            try {
+                const response = await fetch('/create-checkout-session-stripe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        product_id: 'prod_R2aVIdHtEu21Js'  
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.sessionId) {
+                        stripe.redirectToCheckout({ sessionId: data.sessionId });
+                    } else {
+                        alert("Error: " + data.error);
+                    }
+                } else {
+                    alert("Error occurred: " + response.status);
+                }
+            } catch (error) {
+                alert("Error during checkout: " + error.message);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Store</h1>
+    <button onclick="checkout()">Buy Item</button>
+</body>
+</html>
