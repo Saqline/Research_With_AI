@@ -123,7 +123,7 @@ def send_verification_email(email: str, verify_code: str):
             <p>You’re almost ready to get started. Use the verification code below to complete your sign-up process:</p>
             <div class="verification-code">{verify_code}</div>
             <p>This code will expire in 5 minutes.</p>
-            <p>Thanks</p>
+            <p>Thanks </p>
     
         </div>
         
