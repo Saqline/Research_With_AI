@@ -4,10 +4,10 @@ from email.mime.text import MIMEText
 
 def send_email(email: str,  subject: str, body: str):
     # SMTP server configuration
-    smtp_host = "mail.sobjanta.ai"
+    smtp_host = "mail host"
     smtp_port = 587  # SSL/TLS port
-    smtp_user = "info@techknowgram.com"
-    smtp_password = "Tkgl@432!"
+    smtp_user = "hostmail"
+    smtp_password = "pass"
 
     # Create the email
     msg = MIMEMultipart()
