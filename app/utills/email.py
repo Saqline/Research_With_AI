@@ -124,7 +124,7 @@ def send_verification_email(email: str, verify_code: str):
             <div class="verification-code">{verify_code}</div>
             <p>This code will expire in 5 minutes.</p>
             <p>Thanks,</p>
-            <p>The Sobjanta Team</p>
+    
         </div>
         <div class="footer">
             <p>Get in touch</p>
